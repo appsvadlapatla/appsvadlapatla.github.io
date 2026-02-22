@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Scorepad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --text: #1f2937;
+            --bg: #f9fafb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--bg);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: var(--primary);
+        }
+
+        .contact-card {
+            background: #eff6ff;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 40px;
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Support</h1>
+            <p>We're here to help you get the most out of Scorepad.</p>
+        </header>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>How do I start a new game?</h3>
+            <p>Tap the prominent "+" button on the home screen. You can then enter the game name and player names to get
+                started.</p>
+
+            <h3>Can I track more than 6 players?</h3>
+            <p>Currently, Scorepad supports up to 6 players per game session to ensure the interface remains clear and
+                usable on all device sizes.</p>
+
+            <h3>How do I edit a player's name?</h3>
+            <p>Player names are set when creating a new game. If you made a mistake, you can currently start a new game
+                session with the correct names.</p>
+
+            <h3>Does Scorepad require an internet connection?</h3>
+            <p>No! Scorepad is designed to be <strong>100% offline</strong>. You can track scores anywhere—on a plane,
+                in
+                the mountains, or in your own backyard—without needing Wi-Fi or cellular data.</p>
+
+            <h3>Is my data backed up?</h3>
+            <p>Scorepad stores data locally on your device. If you delete the app, your game history will be removed. We
+                are considering iCloud sync for a future update.</p>
+
+            <div class="contact-card">
+                <h2>Still need help?</h2>
+                <p>If you're experiencing issues or have a feature request, please reach out to us!</p>
+                <a href="mailto:avadlapatla.apps+scorepad@gmail.com" class="contact-button">Email Support</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2026 Scorepad. All rights reserved.
+    </footer>
+</body>
+
+</html>
