@@ -1,113 +1,133 @@
+Conversation Log
+use American names and generate assets for appstore
+
+All sample data and placeholders now use American names (Emma, Liam, Chloe, Noah, Alex), and the complete sRGB (hasAlpha: no) App Store Connect asset suite has been generated and verified from live @3x captures on your iPhone (Sumsung).
+
+1. App Store 6.9-Inch Screenshots (1320 x 2868, hasAlpha: no)
+
+Saved in /Users/himaja/Work/apps/Scorepad/AppStore/Screenshots/6.9-inch/ (enable "Use 6.9" Display" in App Store Connect Media Manager to auto-scale to 6.5", 6.3", and 6.1" tiers):
+
+Panoramic Gallery Strip Preview: Panorama_Preview.png
+Slide 01 · Live Scoreboard: 01_Live_Scoreboard.png
+Slide 02 · Instant Resume & History: 02_Instant_Resume.png
+Slide 03 · Round-by-Round Score Sheet: 03_Paper_Ledger.png
+Slide 04 · One-Tap Game Setup: 04_One_Tap_Setup.png
+Slide 05 · Standings & Rivalries: 05_Standings_Stats.png
+Slide 06 · Built-In Game Tools: 06_Game_Tools.png
+Slide 07 · Midnight Dark Mode: 07_Midnight_Dark_Mode.png
+2. App Store Connect Creative Assets (hasAlpha: no)
+
+Saved in /Users/himaja/Work/apps/Scorepad/AppStore/CreativeAssets/:
+
+Search Results (3840 x 2560, 3:2): Search_Results_3840x2560.png
+Product Page Header (3840 x 1646, 21:9): Product_Page_Header_3840x1646.png
+Universal Creative Asset (5244 x 2950, 16:9): Universal_5244x2950.png
+3. Full-Bleed App Icons (1024 x 1024, hasAlpha: no)
+
+Wired in Assets.xcassets/AppIcon.appiconset and exported to /Users/himaja/Work/apps/Scorepad/AppStore/AppIcon/:
+
+Light Appearance: AppIcon_Light_1024x1024.png
+Dark Appearance: AppIcon_Dark_1024x1024.png
+Source Updates
+Updated DebugSnapshotHarness.swift, PlayersTabView.swift, and QuickSetupParser.swift to use American names (Emma, Liam, Chloe, Noah, Alex), with raw 1320 x 2868 @3x captures archived in /Users/himaja/Work/apps/Scorepad/AppStore/Screenshots/6.9-inch-Raw/.
+did you push them to github as well?
+
+Not yet. All the app changes and the AppStore assets (17 MB) are currently uncommitted on local main.
+
+Would you like me to commit and push everything (both the redesigned app code and the AppStore/ assets) to origin/main (https://github.com/avadlapatla/Scorepad.git) now?
+
+make it version 1.1 and build 1, and also give me appstore guide to publish this version along with keywords changes etc  here is the current version https://apps.apple.com/us/app/scorepad-modern-game-tracker/id6759508695
+currently looks like finish game is hidden? 
+
+Good catch: in ScoreboardView, Finish Game was only showing in the bottom dock once a target score was reached (and stayed tucked inside the top ... menu otherwise).
+
+I updated the bottom dock so Finish is always visible right alongside Next Round (and Finish Game stays pinned at the bottom in Simple Counter mode too), bumped both targets to Version 1.1 (Build 1), and am installing the updated build onto your iPhone and refreshing the App Store screenshots now. I will follow up as soon as the install and verification finish.
+
+Scorepad 1.1 (1) is now installed on your iPhone with Finish visible right next to Next Round, and the App Store screenshots are refreshed to match. Running the final Release archive check now and will share the complete summary momentarily.
+
+Appstore V1 1 Guide
+can we move recent games to a seperate tab also include swipe to delete?
+its very slow in transitioning between tabs
+
+I have applied both updates and am installing a Release-optimized build onto your iPhone now:
+
+Dedicated History Tab + Native Swipe-to-Delete: Added HistoryTabView (Games · History · Players · Tools) using a native iOS List so swiping left on any game deletes it immediately (with an Undo toast), swiping right starts a Rematch, and HomeView stays focused on In Progress games and Start a Game presets.
+Tab-Switch Lag Fixed:
+ContentView & ScorepadTheme: Precomputed all dynamic UIColor tokens as static let constants so switching selectedTab no longer invalidates .tint across all tabs.
+PlayersTabView, SuperlativesEngine, & GameSession: Replaced repeated per-row stats & SQLite Round.scores JSON decodes (14x per render) with a single-pass precomputed lookup, and switched the device install from unoptimized Debug (-Onone) to full Release (-Owholemodule).
+
+I will confirm as soon as the install and updated App Store screenshots finish in a moment.
+
+Everything is built (0 warnings, 0 errors in Release), verified at Version 1.1 (Build 1), and installed as a full Release-optimized build on your iPhone (Sumsung):
+
+What Is Live on Your iPhone Now
+Version 1.1 · Build 1: Synced across both Scorepad and ScorepadWidgets in project.pbxproj, with live App Store referral & review links (id6759508695) wired in AppConstants and SettingsView.
+Dedicated History Tab + Native Swipe-to-Delete: HistoryTabView now houses all recent and completed games with native swipe-left to Delete (plus Undo toast), swipe-right for Rematch, filter pills (All · Active · Finished), and search. HomeView stays clean with In Progress games (also swipe-deletable) and Start a Game presets.
+Visible Finish Action: ScoreboardView keeps Finish pinned right next to Next Round (and Finish Game pinned in Simple Counter mode).
+Instant Tab Transitions: Static color caching in ScorepadTheme + ContentView, single-pass round score aggregation in GameSession + SuperlativesEngine, and -Owholemodule Release compilation make switching across all 4 tabs immediate.
+Refreshed App Store Assets: Updated screenshots (1320 x 2868) and creative assets matching the exact 1.1 (1) UI are ready in AppStore.
+App Store Connect Publishing & ASO Guide
+
+Open appstore_v1_1_guide.md (also saved in your repo at APP_STORE_V1_1_GUIDE.md) for your copy-paste Title, Subtitle, 200-char English (U.S.) + Spanish (Mexico) keyword banks, conversion-optimized Description, release notes, and step-by-step Xcode Archive upload checklist.
+
+Try switching tabs and swiping to delete on your iPhone, and let me know if you would like me to commit and push everything to GitHub (origin/main)!
+
+Appstore V1 1 Guide
+did we push the changes to git? updated the privacy file?
+privacy.html#L1-113
+support.html#L1-130
+PrivacyInfo.xcprivacy#L1-14
+ScorepadWidgetSnapshot.swift#L1-61
+README.md#L1-47
+.gitignore#L1-32
+ScorepadHomeAndControlWidgets.swift#L1-50
+privacy.html
+support.html
+README.md
+Working
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Scorepad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Privacy Policy · Scorepad</title>
     <style>
         :root {
-            --primary: #3b82f6;
-            --secondary: #8b5cf6;
-            --text: #1f2937;
-            --bg: #f9fafb;
+            --accent: #0f766e;
+            --accent-ink: #0d655e;
+            --accent-wash: #eef4f4;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: rgba(15, 23, 42, 0.08);
+            --bg: #f7f8fa;
+            --surface: #ffffff;
         }
-
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: var(--text);
             background-color: var(--bg);
-            line-height: 1.6;
+            line-height: 1.65;
             margin: 0;
-            padding: 0;
+            padding: 24px 16px;
+            -webkit-font-smoothing: antialiased;
         }
-
         .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            max-width: 760px;
+            margin: 36px auto;
+            padding: 44px 40px;
+            background: var(--surface);
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03);
         }
-
         header {
-            text-align: center;
-            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 {
-            margin-top: 30px;
-            color: var(--primary);
-        }
-
-        .last-updated {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-bottom: 40px;
-            color: #6b7280;
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <header>
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: February 21, 2026</p>
-        </header>
-
-        <section>
-            <p>Scorepad is built as a tool to help you track scores for your favorite games. Your privacy is paramount
-                to us, and we have designed this app with that in mind.</p>
-
-            <h2>1. Data Collection</h2>
-            <p>Scorepad <strong>does not collect, store, or transmit any personal data</strong>. Since the application
-                functions <strong>100% offline</strong>, all information you
-                enter into the application (such as game names and scores) is stored locally on your device using
-                Apple's SwiftData technology.</p>
-
-            <h2>2. Data Usage</h2>
-            <p>Since we do not collect any data, your information never leaves your device and is not used for any
-                marketing, analytics, or third-party purposes.</p>
-
-            <h2>3. Third-Party Services</h2>
-            <p>Scorepad does not use any third-party SDKs or services that collect user data. We use Apple's standard
-                frameworks (UIKit, SwiftUI, SwiftData) to provide the app experience.</p>
-
-            <h2>4. Children's Privacy</h2>
-            <p>Because Scorepad does not collect any personal information, it is fully compliant with children's privacy
-                regulations. We do not knowingly collect personal data from anyone, including children under the age of
-                13.</p>
-
-            <h2>5. Changes to This Policy</h2>
-            <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page, and the
-                "Last Updated" date will reflect the revision.</p>
-
-            <h2>6. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at <a
-                    href="mailto:avadlapatla.apps+scorepad@gmail.com">avadlapatla.apps+scorepad@gmail.com</a>.</p>
-        </section>
-    </div>
-    <footer>
-        &copy; 2026 Scorepad. All rights reserved.
-    </footer>
-</body>
-
-</html>
+        .badge {
+            display: inline-block;
+            background: var(--accent-wash);
+            color: var(--accent-ink);
+            font-size: 0.78rem;
+            font-weight: 700;
