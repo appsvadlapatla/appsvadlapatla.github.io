@@ -7,16 +7,30 @@
     <title>Privacy Policy &amp; Support · Burp</title>
     <style>
         :root {
-            --burp-bg: #FCFBF8;
-            --burp-card: #F5F2EC;
-            --burp-border: #E6E0D5;
-            --burp-terracotta: #C05A25;
-            --burp-terracotta-text: #9E4315;
+            --burp-bg: #FAF3E7;
+            --burp-card: #FFFFFF;
+            --burp-border: #E6DACA;
+            --burp-terracotta: #B84A24;
+            --burp-terracotta-text: #963B1A;
             --burp-sage: #5D7452;
             --burp-slate: #5B7792;
             --burp-clay: #A8783A;
-            --burp-text: #1F1B18;
-            --burp-secondary: #6E655D;
+            --burp-text: #2B1F17;
+            --burp-secondary: #6A574B;
+            --burp-shadow: rgba(43, 31, 23, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --burp-bg: #171310;
+                --burp-card: #221C18;
+                --burp-border: #382E27;
+                --burp-terracotta: #E07A4F;
+                --burp-terracotta-text: #F2A07B;
+                --burp-text: #F7EFE4;
+                --burp-secondary: #B9A99A;
+                --burp-shadow: rgba(0, 0, 0, 0.28);
+            }
         }
 
         body {
@@ -36,7 +50,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 52px;
+            margin-bottom: 48px;
         }
 
         .brand-mark {
@@ -66,12 +80,12 @@
         }
 
         .section {
-            background: #FFFFFF;
+            background: var(--burp-card);
             border: 1px solid var(--burp-border);
             padding: 28px;
             border-radius: 22px;
             margin-bottom: 20px;
-            box-shadow: 0 6px 20px rgba(31, 27, 24, 0.04);
+            box-shadow: 0 6px 20px var(--burp-shadow);
             display: flex;
             gap: 20px;
         }
@@ -94,11 +108,21 @@
         }
 
         .section-content p {
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
         }
 
         .section-content p:last-child {
             margin-bottom: 0;
+        }
+
+        a {
+            color: var(--burp-terracotta-text);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -110,14 +134,22 @@
 
         .offline-badge {
             display: inline-block;
-            background: rgba(192, 90, 37, 0.13);
+            background: rgba(184, 74, 36, 0.13);
             color: var(--burp-terracotta-text);
             padding: 5px 14px;
             border-radius: 20px;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 0.08em;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.02em;
             margin-bottom: 16px;
+        }
+
+        @media (max-width: 540px) {
+            .section {
+                flex-direction: column;
+                gap: 12px;
+                padding: 22px;
+            }
         }
     </style>
 </head>
@@ -126,32 +158,32 @@
     <div class="container">
         <header>
             <div class="brand-mark">burp<span class="brand-dot">.</span></div>
-            <div class="offline-badge">PRIVACY &amp; SUPPORT</div>
+            <div class="offline-badge">Privacy &amp; Support</div>
             <h1>Privacy Policy</h1>
-            <p class="subtitle">Designed as a calm daily logbook for your family's earliest days.</p>
+            <p class="subtitle">A quiet, private baby logbook designed for your family's earliest days.</p>
         </header>
 
         <div class="section">
             <div class="icon-box" style="background: rgba(91, 119, 146, 0.15);">📱</div>
             <div class="section-content">
                 <h2>Stays on Your iPhone</h2>
-                <p>Everything you log, including feeds, expressed milk, diapers, sleep, growth, health notes, and photos, stays on your iPhone. We never transmit or store your data on external servers.</p>
+                <p>Everything you log, including nursing sessions, bottles, expressed milk, diapers, sleep, solids, growth check-ins, health notes, and baby photos, stays strictly on your iPhone. We never transmit or store your data on external servers.</p>
             </div>
         </div>
 
         <div class="section">
-            <div class="icon-box" style="background: rgba(192, 90, 37, 0.14);">✋</div>
+            <div class="icon-box" style="background: rgba(184, 74, 36, 0.14);">✋</div>
             <div class="section-content">
-                <h2>No Accounts or Tracking</h2>
-                <p>Burp has no sign-ups, analytics, or advertising trackers. We never sell your data because we never see it.</p>
+                <h2>No Accounts, Ads, or Tracking</h2>
+                <p>Burp has no sign-ups, analytics, advertising SDKs, or subscriptions. We never sell or share your family's data because we never collect or see it.</p>
             </div>
         </div>
 
         <div class="section">
             <div class="icon-box" style="background: rgba(93, 116, 82, 0.16);">🔒</div>
             <div class="section-content">
-                <h2>Encrypted at Rest</h2>
-                <p>Your family's logs stay on your iPhone, protected by your device passcode, Face ID, or Touch ID.</p>
+                <h2>Protected on Device</h2>
+                <p>Your logs are stored locally using Apple's on-device SwiftData storage and protected by your iPhone passcode, Face ID, or Touch ID. Built-in brown noise in Sleep mode is synthesized offline on your device without an internet connection.</p>
             </div>
         </div>
 
@@ -159,28 +191,28 @@
             <div class="icon-box" style="background: rgba(168, 120, 58, 0.16);">🔔</div>
             <div class="section-content">
                 <h2>Optional Permissions</h2>
-                <p>Notifications are optional and only used for reminders you turn on. Choosing a baby photo uses Apple's photo picker without granting access to your full library.</p>
+                <p>Local notifications are completely optional, configured independently per baby, and only used for reminders you turn on. Choosing a baby photo uses Apple's system photo picker without granting access to your full photo library.</p>
             </div>
         </div>
 
         <div class="section">
-            <div class="icon-box" style="background: rgba(192, 90, 37, 0.14);">🩺</div>
+            <div class="icon-box" style="background: rgba(184, 74, 36, 0.14);">🩺</div>
             <div class="section-content">
                 <h2>Medical Disclaimer</h2>
-                <p>Burp is a personal tracking and organizational logbook, not a medical device, and does not provide medical advice, diagnosis, or treatment. Always consult your pediatrician or qualified healthcare provider with any questions regarding your child's health, feeding, growth, temperature, or medications.</p>
+                <p>Burp is a personal family logbook, not a medical device, and does not provide medical advice, percentiles, diagnosis, or treatment. Health temperatures are strictly manual user-entered logs. Always consult a qualified healthcare provider before making any medical decisions or with questions regarding your child's feeding, growth, temperature, or medications.</p>
             </div>
         </div>
 
         <header style="margin-top: 72px; margin-bottom: 36px;">
             <h1>Support &amp; Help</h1>
-            <p class="subtitle">Questions or feedback about Burp? We are happy to help.</p>
+            <p class="subtitle">Questions or feedback about Burp 3.0? We are happy to help.</p>
         </header>
 
         <div class="section">
             <div class="icon-box" style="background: rgba(91, 119, 146, 0.15);">✉️</div>
             <div class="section-content">
                 <h2>Contact Support</h2>
-                <p>Email us directly anytime at <strong>avadlapatla.apps+support@gmail.com</strong>.</p>
+                <p>Email us directly anytime at <a href="mailto:avadlapatla.apps+support@gmail.com">avadlapatla.apps+support@gmail.com</a>.</p>
                 <p>We typically respond within 24 to 48 hours.</p>
             </div>
         </div>
@@ -189,10 +221,11 @@
             <div class="icon-box" style="background: rgba(93, 116, 82, 0.16);">❓</div>
             <div class="section-content">
                 <h2>Frequently Asked Questions</h2>
-                <p><strong>How do I switch units or enable 3 AM Red-Shift mode?</strong><br>Tap the <strong>Settings</strong> slider button in the top-left corner of Home to switch between Metric and Imperial units or choose System, Light, Night, or 3 AM Red-Shift amber appearance, or tap the moon button in the top-right header on Home.</p>
-                <p><strong>Can I share a shift summary or merge backups with my partner?</strong><br>Yes! Open the baby profile switcher or <strong>Settings &gt; Share Partner Shift Handoff</strong> to send a 1-tap visual postcard. For full backups or moving to a new iPhone, swipe up to the <strong>Care Tray</strong> and tap <strong>Backups</strong> (or open <strong>Settings</strong>) to export or restore a JSON backup (duplicates are skipped automatically).</p>
-                <p><strong>Does Burp support Lock Screen Live Activities, Widgets, and Siri?</strong><br>Yes! Active nursing and sleep timers appear automatically on your Lock Screen and Dynamic Island, Home Screen and Lock Screen widgets display live care status, and you can say "Siri, start nursing in Burp", "Siri, start sleep in Burp", or "Siri, log a wet diaper in Burp" hands-free.</p>
-                <p><strong>How do I edit or delete an entry or profile?</strong><br>Swipe up to open the <strong>Care Tray</strong> and tap <strong>Journal</strong> or <strong>Rhythm</strong> to browse, edit, or delete any entry, or tap your baby profile badge to edit or remove a baby's profile.</p>
+                <p><strong>How do I switch units, customize Swaddle Bean, or enable 3 AM Red-Shift?</strong><br>Tap <strong>Nursery</strong> in the top-left corner of Home to switch between Imperial and Metric units, turn on 3 AM Red-Shift amber mode (or schedule it automatically from 10 PM to 6 AM), manage per-baby reminders, or replay the interactive App Tour. Tap your baby's name pill in the top-right corner to edit your baby's profile or customize Swaddle Bean's skin tone, hair, swaddle color, or photo.</p>
+                <p><strong>How do twins and per-baby reminders work?</strong><br>Add multiple babies from the <strong>Nursery</strong> drawer. Each baby keeps their own independent Home feed dock preference (Nurse or Bottle, Breast Milk or Formula), Swaddle Bean appearance, and per-baby reminder switches.</p>
+                <p><strong>Can I share a shift summary, print a PDF, or merge backups with my partner?</strong><br>Yes. Swipe up to the <strong>Care Tray</strong> and tap <strong>Share</strong> (or open <strong>Nursery</strong>) to send a one-tap Shift Handoff postcard or export a 1-page Care Summary PDF (7, 14, or 30 days). You can also export or restore portable JSON backups anytime; partner merges skip duplicates automatically.</p>
+                <p><strong>Does Burp support Live Activities, Apple Watch, Widgets, and Siri Shortcuts?</strong><br>Yes. Active nursing and sleep timers appear automatically on your Lock Screen, Dynamic Island, StandBy, and Apple Watch Smart Stack so you can switch sides or end a session without unlocking. You can also add Home Screen Widgets, Control Center buttons, Action Button controls, and use Siri Shortcuts ("Start nursing in Burp", "Start sleep in Burp", or "Log a wet diaper in Burp").</p>
+                <p><strong>How do I edit or delete an entry or profile?</strong><br>Swipe up to open the <strong>Care Tray</strong> and scroll to <strong>Today's Story</strong> or tap <strong>Journal</strong> to browse, edit, or delete any logged entry. To edit or remove a baby profile, open the <strong>Nursery</strong> drawer and tap the edit button next to that baby.</p>
             </div>
         </div>
 
