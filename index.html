@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Privacy Policy &amp; Support · Burp</title>
     <style>
         :root {
+            color-scheme: light dark;
             --burp-bg: #FAF3E7;
             --burp-card: #FFFFFF;
             --burp-border: #E6DACA;
@@ -18,6 +20,7 @@
             --burp-text: #2B1F17;
             --burp-secondary: #6A574B;
             --burp-shadow: rgba(43, 31, 23, 0.05);
+            --burp-pill-bg: rgba(184, 74, 36, 0.12);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -30,6 +33,7 @@
                 --burp-text: #F7EFE4;
                 --burp-secondary: #B9A99A;
                 --burp-shadow: rgba(0, 0, 0, 0.28);
+                --burp-pill-bg: rgba(224, 122, 79, 0.16);
             }
         }
 
@@ -50,7 +54,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
 
         .brand-mark {
@@ -63,6 +67,30 @@
 
         .brand-dot {
             color: var(--burp-terracotta);
+        }
+
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 18px 0 24px;
+        }
+
+        .quick-nav a {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--burp-border);
+            background: var(--burp-card);
+            color: var(--burp-text);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .quick-nav a:hover {
+            border-color: var(--burp-terracotta);
+            text-decoration: none;
         }
 
         h1 {
@@ -100,6 +128,10 @@
             font-size: 23px;
         }
 
+        .section-content {
+            flex: 1;
+        }
+
         .section-content h2 {
             font-family: ui-serif, Georgia, "Times New Roman", serif;
             margin-top: 0;
@@ -113,6 +145,52 @@
 
         .section-content p:last-child {
             margin-bottom: 0;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        details {
+            border: 1px solid var(--burp-border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            background: var(--burp-bg);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--burp-terracotta-text);
+            flex-shrink: 0;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        details p {
+            margin: 10px 0 0 0;
+            color: var(--burp-secondary);
+            font-size: 15px;
         }
 
         a {
@@ -134,14 +212,14 @@
 
         .offline-badge {
             display: inline-block;
-            background: rgba(184, 74, 36, 0.13);
+            background: var(--burp-pill-bg);
             color: var(--burp-terracotta-text);
             padding: 5px 14px;
             border-radius: 20px;
             font-weight: 600;
             font-size: 13px;
             letter-spacing: 0.02em;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         @media (max-width: 540px) {
@@ -156,9 +234,14 @@
 
 <body>
     <div class="container">
-        <header>
+        <header id="privacy">
             <div class="brand-mark">burp<span class="brand-dot">.</span></div>
             <div class="offline-badge">Privacy &amp; Support</div>
+            <nav class="quick-nav" aria-label="Page sections">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#support">Support</a>
+                <a href="#faq">FAQ</a>
+            </nav>
             <h1>Privacy Policy</h1>
             <p class="subtitle">A quiet, private baby logbook designed for your family's earliest days.</p>
         </header>
@@ -183,7 +266,7 @@
             <div class="icon-box" style="background: rgba(93, 116, 82, 0.16);">🔒</div>
             <div class="section-content">
                 <h2>Protected on Device</h2>
-                <p>Your logs are stored locally using Apple's on-device SwiftData storage and protected by your iPhone passcode, Face ID, or Touch ID. Built-in brown noise in Sleep mode is synthesized offline on your device without an internet connection.</p>
+                <p>Your logs are stored locally on your iPhone and protected by your device passcode, Face ID, or Touch ID. Built-in brown noise in Sleep mode is generated offline on your iPhone with no internet connection.</p>
             </div>
         </div>
 
@@ -203,7 +286,7 @@
             </div>
         </div>
 
-        <header style="margin-top: 72px; margin-bottom: 36px;">
+        <header id="support" style="margin-top: 72px; margin-bottom: 36px;">
             <h1>Support &amp; Help</h1>
             <p class="subtitle">Questions or feedback about Burp 3.0? We are happy to help.</p>
         </header>
@@ -217,20 +300,37 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section" id="faq">
             <div class="icon-box" style="background: rgba(93, 116, 82, 0.16);">❓</div>
             <div class="section-content">
                 <h2>Frequently Asked Questions</h2>
-                <p><strong>How do I switch units, customize Swaddle Bean, or enable 3 AM Red-Shift?</strong><br>Tap <strong>Nursery</strong> in the top-left corner of Home to switch between Imperial and Metric units, turn on 3 AM Red-Shift amber mode (or schedule it automatically from 10 PM to 6 AM), manage per-baby reminders, or replay the interactive App Tour. Tap your baby's name pill in the top-right corner to edit your baby's profile or customize Swaddle Bean's skin tone, hair, swaddle color, or photo.</p>
-                <p><strong>How do twins and per-baby reminders work?</strong><br>Add multiple babies from the <strong>Nursery</strong> drawer. Each baby keeps their own independent Home feed dock preference (Nurse or Bottle, Breast Milk or Formula), Swaddle Bean appearance, and per-baby reminder switches.</p>
-                <p><strong>Can I share a shift summary, print a PDF, or merge backups with my partner?</strong><br>Yes. Swipe up to the <strong>Care Tray</strong> and tap <strong>Share</strong> (or open <strong>Nursery</strong>) to send a one-tap Shift Handoff postcard or export a 1-page Care Summary PDF (7, 14, or 30 days). You can also export or restore portable JSON backups anytime; partner merges skip duplicates automatically.</p>
-                <p><strong>Does Burp support Live Activities, Apple Watch, Widgets, and Siri Shortcuts?</strong><br>Yes. Active nursing and sleep timers appear automatically on your Lock Screen, Dynamic Island, StandBy, and Apple Watch Smart Stack so you can switch sides or end a session without unlocking. You can also add Home Screen Widgets, Control Center buttons, Action Button controls, and use Siri Shortcuts ("Start nursing in Burp", "Start sleep in Burp", or "Log a wet diaper in Burp").</p>
-                <p><strong>How do I edit or delete an entry or profile?</strong><br>Swipe up to open the <strong>Care Tray</strong> and scroll to <strong>Today's Story</strong> or tap <strong>Journal</strong> to browse, edit, or delete any logged entry. To edit or remove a baby profile, open the <strong>Nursery</strong> drawer and tap the edit button next to that baby.</p>
+                <div class="faq-list">
+                    <details open>
+                        <summary>How do I switch units, customize Swaddle Bean, or enable 3 AM Red-Shift?</summary>
+                        <p>Tap <strong>Nursery</strong> in the top-left corner of Home to switch between Imperial and Metric units, turn on 3 AM Red-Shift amber mode (or schedule it automatically from 10 PM to 6 AM), manage per-baby reminders, or replay the interactive App Tour. Tap your baby's name pill in the top-right corner to edit your baby's profile or customize Swaddle Bean's skin tone, hair, swaddle color, or photo.</p>
+                    </details>
+                    <details>
+                        <summary>How do twins and per-baby reminders work?</summary>
+                        <p>Add multiple babies from the <strong>Nursery</strong> drawer. Each baby keeps their own independent Home feed dock preference (Nurse or Bottle, Breast Milk or Formula), Swaddle Bean appearance, and per-baby reminder switches.</p>
+                    </details>
+                    <details>
+                        <summary>Can I share a shift summary, print a PDF, or merge backups with my partner?</summary>
+                        <p>Yes. Swipe up to the <strong>Care Tray</strong> and tap <strong>Share</strong> (or open <strong>Nursery</strong>) to send a one-tap Shift Handoff postcard or export a 1-page Care Summary PDF (7, 14, or 30 days). You can also export or restore portable JSON backups anytime; partner merges skip duplicates automatically.</p>
+                    </details>
+                    <details>
+                        <summary>Does Burp support Live Activities, Apple Watch, Widgets, and Siri Shortcuts?</summary>
+                        <p>Yes. Active nursing and sleep timers appear automatically on your Lock Screen, Dynamic Island, StandBy, and Apple Watch Smart Stack so you can switch sides or end a session without unlocking. You can also add Home Screen Widgets, Control Center buttons, Action Button controls, and use Siri Shortcuts ("Start nursing in Burp", "Start sleep in Burp", or "Log a wet diaper in Burp").</p>
+                    </details>
+                    <details>
+                        <summary>How do I edit or delete an entry or profile?</summary>
+                        <p>Swipe up to open the <strong>Care Tray</strong> and scroll to <strong>Today's Story</strong> or tap <strong>Journal</strong> to browse, edit, or delete any logged entry. To edit or remove a baby profile, open the <strong>Nursery</strong> drawer and tap the edit button next to that baby.</p>
+                    </details>
+                </div>
             </div>
         </div>
 
         <footer>
-            <p>Burp &middot; Version 3.0</p>
+            <p>Burp &middot; Version 3.0 &middot; Last updated November 2026</p>
             <p>&copy; 2026 Burp. All rights reserved.</p>
         </footer>
     </div>
