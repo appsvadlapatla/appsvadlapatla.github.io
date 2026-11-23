@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Tendril · Privacy Policy &amp; Support</title>
+  <meta name="description" content="Privacy Policy and Support for Tendril: Daily Budget Planner for iPhone. 100% on-device budgeting with zero accounts, zero tracking, and zero bank logins.">
+  <style>
+    :root {
+      --bg-light: #f7f5f0;
+      --bg-dark: #0c0e0d;
+      --surface-light: #ffffff;
+      --surface-dark: #151817;
+      --surface-subtle-light: #efece5;
+      --surface-subtle-dark: #1d211f;
+      --border-light: rgba(26, 30, 28, 0.10);
+      --border-dark: rgba(242, 241, 236, 0.12);
+      --ink-light: #1a1e1c;
+      --ink-dark: #f2f1ec;
+      --muted-light: #59615c;
+      --muted-dark: #a6afa9;
+      --accent-light: #257a52;
+      --accent-dark: #54b888;
+      --amber-light: #b8731f;
+      --amber-dark: #e6a84c;
+      --slate-light: #48698c;
+      --slate-dark: #7da6cf;
+
+      --bg: var(--bg-light);
+      --surface: var(--surface-light);
+      --surface-subtle: var(--surface-subtle-light);
+      --border: var(--border-light);
+      --ink: var(--ink-light);
+      --muted: var(--muted-light);
+      --accent: var(--accent-light);
+      --amber: var(--amber-light);
+      --slate: var(--slate-light);
+
+      color-scheme: light dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: var(--bg-dark);
+        --surface: var(--surface-dark);
+        --surface-subtle: var(--surface-subtle-dark);
+        --border: var(--border-dark);
+        --ink: var(--ink-dark);
+        --muted: var(--muted-dark);
+        --accent: var(--accent-dark);
+        --amber: var(--amber-dark);
+        --slate: var(--slate-dark);
+      }
+    }
+
+    @supports (color: light-dark(white, black)) {
+      :root {
+        --bg: light-dark(var(--bg-light), var(--bg-dark));
+        --surface: light-dark(var(--surface-light), var(--surface-dark));
+        --surface-subtle: light-dark(var(--surface-subtle-light), var(--surface-subtle-dark));
+        --border: light-dark(var(--border-light), var(--border-dark));
+        --ink: light-dark(var(--ink-light), var(--ink-dark));
+        --muted: light-dark(var(--muted-light), var(--muted-dark));
+        --accent: light-dark(var(--accent-light), var(--accent-dark));
+        --amber: light-dark(var(--amber-light), var(--amber-dark));
+        --slate: light-dark(var(--slate-light), var(--slate-dark));
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      accent-color: var(--accent);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      opacity: 0.82;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background-color: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .nav-pill:hover {
+      border-color: var(--accent);
+      opacity: 1;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .hero {
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background-color: var(--surface-subtle);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-family: "New York", ui-serif, Georgia, Cambria, serif;
+      font-size: clamp(2rem, 4.5vw, 2.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 12px;
+      margin: 28px 0 40px;
+    }
+
+    .fact-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .fact-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .fact-value {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .panel {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(22px, 4vw, 34px);
+      margin-bottom: 28px;
+      scroll-margin-top: 84px;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-family: "New York", ui-serif, Georgia, Cambria, serif;
+      font-size: 1.65rem;
+      letter-spacing: -0.015em;
+    }
+
+    .section-meta {
+      margin: 0 0 22px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+      font-size: 0.86em;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background-color: var(--surface-subtle);
+    }
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background-color: var(--bg);
+      padding: 0 16px;
+    }
+
+    summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.7ch;
+      padding: 15px 0;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "";
+      inline-size: 1em;
+      block-size: 1em;
+      flex-shrink: 0;
+      background-color: var(--accent);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat center / contain;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat center / contain;
+      rotate: -90deg;
+    }
+
+    details[open] > summary::before {
+      rotate: 0deg;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      summary::before {
+        transition: rotate 0.2s ease;
+      }
+    }
+
+    details::details-content {
+      interpolate-size: allow-keywords;
+      overflow: clip;
+      contain: layout;
+    }
+
+    details:not([open])::details-content {
+      block-size: 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      details::details-content {
+        transition: block-size, content-visibility, display;
+        transition-duration: 0.26s;
+        transition-timing-function: ease-in-out;
+        transition-behavior: allow-discrete;
+      }
+    }
+
+    .faq-body {
+      padding: 0 0 16px 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .faq-body p:last-child,
+    .faq-body ul:last-child,
+    .faq-body ol:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-box {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 14px;
+      background-color: var(--surface-subtle);
+      border: 1px solid var(--border);
+    }
+
+    .contact-box h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 8 C18 8 10 19 10 32 C10 45 19 54 31 55 L31 43 C25 42 21 37 21 31 C21 25 25 20 32 19 C35 16 37 12 37 8 C35 8 33.5 8 32 8 Z" fill="#2D8A5E"/>
+          <path d="M36 16 C45 18 52 24 54 31 L42 31 C41 27 38 24 34 23 Z" fill="#D98A2B"/>
+          <path d="M54 35 C52 45 45 53 35 55 L35 43 C40 42 42 39 43 35 Z" fill="#5C7FA3"/>
+        </svg>
+        <span>Tendril</span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a class="nav-pill" href="#privacy">Privacy Policy</a>
+        <a class="nav-pill" href="#support">Support &amp; FAQ</a>
+        <a class="nav-pill" href="https://apps.apple.com/app/id6837887961" rel="noopener">App Store</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        <span>Tendril: Daily Budget Planner · iOS 26</span>
+      </div>
+      <h1>Privacy Policy &amp; Support</h1>
+      <p class="lead">
+        Tendril is built on one clear rule: your spending history belongs exclusively to you.
+        Zero accounts, zero cloud servers, zero analytics trackers, and zero linked bank logins.
+      </p>
+
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-label">Data Collected</div>
+          <div class="fact-value">None (Data Not Collected)</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Storage</div>
+          <div class="fact-value">100% On-Device SwiftData</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">AI, OCR &amp; Voice</div>
+          <div class="fact-value">Local on Your iPhone</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Developer</div>
+          <div class="fact-value">Abhinav Vadlapatla</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="panel" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">Privacy Policy</h2>
+      <p class="section-meta">Effective Date: November 22, 2026 · Applies to Tendril (<code>com.abhinav.tendril</code>) and Tendril Widgets (<code>com.abhinav.tendril.widgets</code>)</p>
+
+      <p>
+        Tendril does not operate user accounts, remote databases, advertising networks, crash telemetry SDKs, or third-party analytics.
+        Every budget, expense, receipt scan, voice entry, and savings goal stays strictly on your iPhone.
+      </p>
+
+      <h3>1. Information We Do Not Collect</h3>
+      <p>
+        Tendril declares <code>NSPrivacyTracking = false</code> and <code>NSPrivacyCollectedDataTypes = []</code> in its Apple Privacy Manifest. We never collect, transmit, rent, or sell:
+      </p>
+      <ul>
+        <li>Personal identifiers, names, email addresses, or user accounts</li>
+        <li>Bank credentials, card numbers, or financial institution tokens</li>
+        <li>Transactions, merchants, receipts, voice recordings, or savings goals</li>
+        <li>Usage analytics, IP addresses, or device fingerprinting signals</li>
+      </ul>
+
+      <h3>2. Local Storage, App Group &amp; Biometric Lock</h3>
+      <ul>
+        <li>Your budgets, entries, goals, and preferences are stored solely on your iPhone in an encrypted local SwiftData database protected with <code>FileProtectionType.completeUntilFirstUserAuthentication</code>.</li>
+        <li>A lightweight read-only snapshot is shared privately inside your device's encrypted App Group container (<code>group.com.abhinav.tendril</code>) so your Home Screen widgets, Lock Screen widgets, and Control Center buttons display up-to-date figures without launching the main app.</li>
+        <li>Optional Face ID or Touch ID locking uses Apple's on-device LocalAuthentication framework and masks presented sheets in the iOS App Switcher. Tendril never accesses or stores biometric data.</li>
+      </ul>
+
+      <h3>3. On-Device Camera, Photos, PDF &amp; Speech Processing</h3>
+      <ul>
+        <li><strong>Camera &amp; Photos:</strong> When you scan a paper receipt or import an image or PDF, Tendril parses it locally on your iPhone using Apple Vision text recognition, PDFKit, and on-device Apple Intelligence (Foundation Models) to pre-fill merchant, date, category, and line items. Original images and PDFs are never uploaded to external servers.</li>
+        <li><strong>Microphone &amp; Speech Recognition:</strong> Spoken entries are transcribed locally on-device using Apple's Speech framework solely to populate an expense draft for your confirmation.</li>
+      </ul>
+
+      <h3>4. Exports, Backups &amp; Complete Deletion</h3>
+      <ul>
+        <li>You can export your ledger anytime as CSV, JSON, a Check-In summary card (with an option to hide exact amounts), or a printable one-page Monthly Almanac PDF through the standard iOS Share sheet.</li>
+        <li>Deleting entries inside Tendril removes them immediately from your local database. You can also erase all local data in Settings, and uninstalling Tendril removes its database and App Group container from your iPhone.</li>
+      </ul>
+
+      <h3>5. Children &amp; Policy Updates</h3>
+      <p>
+        Tendril collects zero personal information from users of any age (rated 4+). If a future update ever introduces optional cloud features, this policy will be updated clearly before any change takes effect.
+      </p>
+      <p>
+        <em>Disclaimer:</em> Tendril is a personal budgeting tool and does not provide financial, tax, or investment advice.
+      </p>
+    </section>
+
+    <section id="support" class="panel" aria-labelledby="support-heading">
+      <h2 id="support-heading">Support &amp; Frequently Asked Questions</h2>
+      <p class="section-meta">Quick guides for receipt scanning, voice entry, waterfall savings goals, backups, and widgets.</p>
+
+      <div class="accordion" aria-labelledby="support-heading">
+        <details open>
+          <summary>How do I scan receipts from Camera, Photos, or PDF files?</summary>
+          <div class="faq-body">
+            <ol>
+              <li>Tap and hold the green <strong>+</strong> button in the dock (or tap the scanner icon inside Quick Add) and choose <strong>Scan Receipt</strong>.</li>
+              <li>Frame a paper receipt in the live viewfinder, tap the folder icon at bottom-left to import from Photos or Files (PDF/images), or tap the clipboard icon at top-right to paste a screenshot.</li>
+              <li>On-device Vision OCR and Apple Intelligence extract the merchant, date, total, and line items. Uncheck excluded items or choose a split (<strong>Full</strong>, <strong>÷2</strong>, <strong>÷3</strong>, <strong>÷4</strong>) before saving.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>How does offline Voice Entry work?</summary>
+          <div class="faq-body">
+            <p>
+              Tap and hold <strong>+</strong> and select <strong>Voice</strong> (or launch Voice Entry from Control Center or Siri), then speak naturally such as <em>"Fourteen dollars for coffee at Blue Bottle"</em>. Transcription and parsing run locally on your iPhone.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do Waterfall Savings Goals work?</summary>
+          <div class="faq-body">
+            <p>
+              Open the <strong>Goals</strong> tab and rank your savings goals in priority order. Any unspent monthly budget fills Priority 1 first; once Priority 1 reaches 100%, remaining surplus cascades automatically into Priority 2 and then Priority 3. Press and drag any basin to reorder priorities anytime.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I import CSV statements or export backups and PDFs?</summary>
+          <div class="faq-body">
+            <ul>
+              <li><strong>CSV &amp; JSON Import/Export:</strong> Open <strong>Settings</strong> (gear icon) to import Apple Card or bank CSV statements, restore a Tendril JSON backup, or export clean CSV spreadsheets and full JSON backups.</li>
+              <li><strong>Monthly Almanac PDF &amp; Check-In Card:</strong> Tap the Share button from Insights or open <strong>Monthly Almanac &amp; Check-In</strong> in Settings to export a one-page US Letter PDF or a shareable summary card with optional hidden amounts.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I enable Face ID or Touch ID lock?</summary>
+          <div class="faq-body">
+            <p>
+              Open <strong>Settings</strong> and toggle <strong>Face ID Lock</strong> on. Tendril automatically locks when you leave the app, masks open sheets in the App Switcher, and redacts sensitive figures on widgets and Spotlight search.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I add Home Screen widgets, Lock Screen widgets, or Control Center actions?</summary>
+          <div class="faq-body">
+            <ul>
+              <li><strong>Widgets:</strong> Long-press your Home Screen or Lock Screen, tap <strong>Edit &gt; Add Widget</strong>, and search for <strong>Tendril</strong> to add Botanical Canopy or Waterfall Savings Goal widgets.</li>
+              <li><strong>Control Center:</strong> Open Control Center, tap <strong>+</strong> (top-left), choose <strong>Add a Control</strong>, and search <strong>Tendril</strong> to pin Quick Add, Scan Receipt, or Voice Entry.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="contact-box">
+        <h3>Need Direct Help or Want to Report a Bug?</h3>
+        <p>
+          Open a support ticket or feature request on our GitHub Support Tracker:
+          <a href="https://github.com/avadlapatla/Tendril/issues" rel="noopener">github.com/avadlapatla/Tendril/issues</a>.
+        </p>
+        <p>
+          When reporting an issue, please include your iPhone model, iOS version, Tendril version (<code>1.0</code>), and steps to reproduce. Please do not attach private financial statements.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 Abhinav Vadlapatla · Tendril for iPhone · Built with zero trackers.
+    </footer>
+  </main>
+</body>
+</html>
