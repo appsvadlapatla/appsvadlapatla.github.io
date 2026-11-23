@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Scorepad · Support &amp; Privacy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --canvas-light: #F7F5F0;
+      --canvas-dark: #111111;
+      --surface-light: #FFFFFF;
+      --surface-dark: #181817;
+      --elevated-light: #EFECE5;
+      --elevated-dark: #222220;
+      --ink-light: #111111;
+      --ink-dark: #F7F5F0;
+      --secondary-light: #5C5952;
+      --secondary-dark: #A8A49B;
+      --tertiary-light: #7D7A72;
+      --tertiary-dark: #8A867E;
+      --accent-light: #E84C22;
+      --accent-dark: #FF5A2C;
+      --accent-soft-light: rgba(232, 76, 34, 0.10);
+      --accent-soft-dark: rgba(255, 90, 44, 0.16);
+      --border-light: #DFDCD3;
+      --border-dark: #2B2B29;
+      --border-strong-light: #C5C1B7;
+      --border-strong-dark: #3E3D3A;
+
+      --canvas: var(--canvas-light);
+      --surface: var(--surface-light);
+      --elevated: var(--elevated-light);
+      --ink: var(--ink-light);
+      --secondary: var(--secondary-light);
+      --tertiary: var(--tertiary-light);
+      --accent: var(--accent-light);
+      --accent-soft: var(--accent-soft-light);
+      --border: var(--border-light);
+      --border-strong: var(--border-strong-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: var(--canvas-dark);
+        --surface: var(--surface-dark);
+        --elevated: var(--elevated-dark);
+        --ink: var(--ink-dark);
+        --secondary: var(--secondary-dark);
+        --tertiary: var(--tertiary-dark);
+        --accent: var(--accent-dark);
+        --accent-soft: var(--accent-soft-dark);
+        --border: var(--border-dark);
+        --border-strong: var(--border-strong-dark);
+      }
+    }
+
+    @supports (color: light-dark(white, black)) {
+      :root {
+        --canvas: light-dark(var(--canvas-light), var(--canvas-dark));
+        --surface: light-dark(var(--surface-light), var(--surface-dark));
+        --elevated: light-dark(var(--elevated-light), var(--elevated-dark));
+        --ink: light-dark(var(--ink-light), var(--ink-dark));
+        --secondary: light-dark(var(--secondary-light), var(--secondary-dark));
+        --tertiary: light-dark(var(--tertiary-light), var(--tertiary-dark));
+        --accent: light-dark(var(--accent-light), var(--accent-dark));
+        --accent-soft: light-dark(var(--accent-soft-light), var(--accent-soft-dark));
+        --border: light-dark(var(--border-light), var(--border-dark));
+        --border-strong: light-dark(var(--border-strong-light), var(--border-strong-dark));
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      accent-color: var(--accent);
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 36px 20px 72px;
+    }
+
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-top: 3px solid var(--accent);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: var(--accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 8px;
+      line-height: 1.15;
+    }
+
+    .lead {
+      margin: 0 0 20px;
+      color: var(--secondary);
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    nav a {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      background: var(--elevated);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 34px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-strong);
+      scroll-margin-top: 20px;
+    }
+
+    .section-label {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-meta {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 11px;
+      color: var(--tertiary);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: var(--secondary);
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      color: var(--secondary);
+    }
+
+    li { margin-bottom: 8px; }
+    li:last-child { margin-bottom: 0; }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--tertiary);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <span class="eyebrow">Scorepad 2.0</span>
+      <h1>Support &amp; Privacy</h1>
+      <p class="lead">A clean Swiss paper scorebook for game night on iPhone. No accounts, no ads, completely offline.</p>
+      <nav aria-label="Page sections">
+        <a href="#support">Support &amp; Tips</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="mailto:avadlapatla.apps+scorepad@gmail.com">Email Developer</a>
+      </nav>
+    </header>
+
+    <div id="support" class="section-header">
+      <span class="section-label">Support &amp; Guide</span>
+      <span class="section-meta">VERSION 2.0</span>
+    </div>
+
+    <section class="card">
+      <h2>Getting Started at the Table</h2>
+      <ul>
+        <li><strong>Five-Second New Pad:</strong> Choose from 22 built-in public-domain formats (Cribbage, Spades, Hearts, Euchre, Gin Rummy, Dominoes, Golf, Darts 501, Mahjong, Pickleball, Five-Dice Yacht, Six-Dice 10,000, and more) or start a custom pad right away.</li>
+        <li><strong>Interactive Paper Scorepad:</strong> Pinned player totals sit at the top with tie-aware rank tags and a live leader strip. Tap any round cell to open the inline mechanical keypad and quick nudge keys (-5, -1, +1, +5, +10), then tap Next to glide across the row.</li>
+        <li><strong>Built for Big Groups (5 to 16 Players):</strong> Games with five or more players automatically open in an adaptive vertical ledger with a round selector strip, full-width ranked rows, and one-tap Grid/List and Seat/Rank toggles.</li>
+        <li><strong>Counter Mode:</strong> Use simple counter scoring for fast games with direct minus and plus buttons right on each player row.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Mid-Game Edits, Archive &amp; Tabletop Tools</h2>
+      <ul>
+        <li><strong>Add Player &amp; Edit Pad Mid-Game:</strong> Open the <strong>...</strong> menu inside any pad to add a latecomer (with an optional catch-up score), rename players, change ink colors, or update target scores and winning rules without restarting.</li>
+        <li><strong>Archive Gestures:</strong> Tap <strong>&lt; Pads</strong> to view your active pad and chronological history. On past pads, swipe right to start a quick Rematch or swipe left to Delete (with an Undo toast).</li>
+        <li><strong>Lock Screen &amp; Tabletop Tools:</strong> Glance at live standings and tap +1 Point or Next Round from Lock Screen Live Activities and Dynamic Island, or open <strong>Tools</strong> for precision Dice, Coin Flip, Turn Timer, and Who's First.</li>
+        <li><strong>Backups &amp; Direct Help:</strong> Export or restore local JSON backups anytime in <strong>Settings</strong>. Need help or want to report an issue? Email <a href="mailto:avadlapatla.apps+scorepad@gmail.com">avadlapatla.apps+scorepad@gmail.com</a> with your iOS version and a short note.</li>
+      </ul>
+    </section>
+
+    <div id="privacy" class="section-header">
+      <span class="section-label">Privacy Policy</span>
+      <span class="section-meta">EFFECTIVE NOV 22, 2026</span>
+    </div>
+
+    <section class="card">
+      <h2>1. Data Not Collected</h2>
+      <p>Scorepad stores all game sessions, player names, ink preferences, custom presets, and settings strictly on your device using Apple SwiftData protected at rest with iOS Data Protection. We do not operate servers that receive or read your data, and Scorepad includes zero accounts, zero analytics, zero crash-reporting SDKs, and zero advertising trackers.</p>
+      <div class="pill-row">
+        <span class="pill">100% On-Device</span>
+        <span class="pill">No Accounts</span>
+        <span class="pill">No Tracking</span>
+        <span class="pill">No Ads</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. Optional Device Permissions</h2>
+      <ul>
+        <li><strong>Photos (Add Only):</strong> Requested only if you explicitly choose "Save to Photos" when exporting a match recap card. Scorepad never reads your photo library.</li>
+        <li><strong>Live Activities, Widgets &amp; Siri Shortcuts:</strong> Controlled through iOS Settings and run locally between Scorepad and Apple system surfaces on your device.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3. Exports, Deletion &amp; Contact</h2>
+      <p>You stay in full control of your data. Exports happen only when you initiate a local JSON backup in Settings or share a recap card through the iOS Share Sheet. Deleting Scorepad or clearing matches inside the app permanently removes your local database.</p>
+      <p>Privacy questions? Contact <a href="mailto:avadlapatla.apps+scorepad@gmail.com">avadlapatla.apps+scorepad@gmail.com</a>.</p>
+    </section>
+
+    <footer>Scorepad · Data Not Collected · Built for iPhone</footer>
+  </main>
+</body>
+</html>
