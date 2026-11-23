@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Scorepad · Support &amp; Privacy</title>
+  <title>Scorepad · Support, FAQ &amp; Privacy</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -227,6 +227,55 @@
 
     a:hover { text-decoration: underline; }
 
+    .faq-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+    }
+
+    details:last-child {
+      border-bottom: none;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-body {
+      padding: 0 20px 18px;
+      color: var(--secondary);
+    }
+
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -263,7 +312,8 @@
       <h1>Support &amp; Privacy</h1>
       <p class="lead">A clean Swiss paper scorebook for game night on iPhone. No accounts, no ads, completely offline.</p>
       <nav aria-label="Page sections">
-        <a href="#support">Support &amp; Tips</a>
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
         <a href="#privacy">Privacy Policy</a>
         <a href="mailto:avadlapatla.apps+scorepad@gmail.com">Email Developer</a>
       </nav>
@@ -292,6 +342,41 @@
         <li><strong>Lock Screen &amp; Tabletop Tools:</strong> Glance at live standings and tap +1 Point or Next Round from Lock Screen Live Activities and Dynamic Island, or open <strong>Tools</strong> for precision Dice, Coin Flip, Turn Timer, and Who's First.</li>
         <li><strong>Backups &amp; Direct Help:</strong> Export or restore local JSON backups anytime in <strong>Settings</strong>. Need help or want to report an issue? Email <a href="mailto:avadlapatla.apps+scorepad@gmail.com">avadlapatla.apps+scorepad@gmail.com</a> with your iOS version and a short note.</li>
       </ul>
+    </section>
+
+    <div id="faq" class="section-header">
+      <span class="section-label">Frequently Asked Questions</span>
+      <span class="section-meta">QUICK ANSWERS</span>
+    </div>
+
+    <section class="faq-list" aria-label="Frequently Asked Questions">
+      <details>
+        <summary>Can I add a player after a game has already started?</summary>
+        <div class="faq-body">
+          <p>Yes. Open the <strong>...</strong> menu at the top right of your scorepad and tap <strong>Add Player</strong>. You can pick from saved players or enter a new name, choose an ink color, and optionally enter a catch-up score for missed rounds.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I switch between Grid and List layouts for big groups?</summary>
+        <div class="faq-body">
+          <p>Games with five or more players open in the vertical List ledger automatically so every player and rank stays clearly visible. You can tap the <strong>Grid / List</strong> or <strong>Seat / Rank</strong> toggle in the top standings strip anytime.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I delete or rematch a past pad, or delete a running game?</summary>
+        <div class="faq-body">
+          <p>On the Pads archive screen, swipe right on any past pad to reveal <strong>Rematch</strong>, or swipe left to reveal <strong>Delete</strong> (with an Undo toast). To delete a currently active pad, tap the <strong>...</strong> menu on the Active Pad card or inside the scorepad and choose <strong>Delete Pad</strong>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Does Scorepad work completely offline and without an account?</summary>
+        <div class="faq-body">
+          <p>Yes. Scorepad requires no account, no subscription, and no internet connection. All pads, player stats, and custom setups stay on your iPhone, and you can export or restore local JSON backups anytime in Settings.</p>
+        </div>
+      </details>
     </section>
 
     <div id="privacy" class="section-header">
