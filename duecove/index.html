@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Duecove · Privacy Policy &amp; Support</title>
+  <meta name="description" content="Privacy Policy and Support for Duecove: every purchase, receipt, return deadline, and warranty in one private home on iPhone.">
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      /* Raw Archival Receipt Folio tokens */
+      --canvas-light: #f5f2ea;
+      --canvas-dark: #121517;
+      --desk-light: #eae5da;
+      --desk-dark: #0d1012;
+      --paper-light: #fcfbf7;
+      --paper-dark: #1b2023;
+      --pocket-light: #1e2e36;
+      --pocket-dark: #1f2d34;
+      --hairline-light: #ddd6c8;
+      --hairline-dark: #2a3237;
+      --seam-light: #cfc6b6;
+      --seam-dark: #353f45;
+
+      --ink-primary-light: #18252c;
+      --ink-primary-dark: #f2efe9;
+      --ink-secondary-light: #556269;
+      --ink-secondary-dark: #a1acb2;
+      --ink-tertiary-light: #707c82;
+      --ink-tertiary-dark: #7d8a91;
+
+      --seaglass-light: #1b6b68;
+      --seaglass-dark: #6bc4be;
+      --seaglass-wash-light: #e4f1f0;
+      --seaglass-wash-dark: #172d2c;
+      --terracotta-light: #c25229;
+      --terracotta-dark: #f08a65;
+
+      /* Fallback assignments for browsers without light-dark() */
+      --canvas: var(--canvas-light);
+      --desk: var(--desk-light);
+      --paper: var(--paper-light);
+      --pocket: var(--pocket-light);
+      --hairline: var(--hairline-light);
+      --seam: var(--seam-light);
+      --ink-primary: var(--ink-primary-light);
+      --ink-secondary: var(--ink-secondary-light);
+      --ink-tertiary: var(--ink-tertiary-light);
+      --seaglass: var(--seaglass-light);
+      --seaglass-wash: var(--seaglass-wash-light);
+      --terracotta: var(--terracotta-light);
+
+      --font-serif: ui-serif, "New York", Georgia, "Times New Roman", serif;
+      --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: var(--canvas-dark);
+        --desk: var(--desk-dark);
+        --paper: var(--paper-dark);
+        --pocket: var(--pocket-dark);
+        --hairline: var(--hairline-dark);
+        --seam: var(--seam-dark);
+        --ink-primary: var(--ink-primary-dark);
+        --ink-secondary: var(--ink-secondary-dark);
+        --ink-tertiary: var(--ink-tertiary-dark);
+        --seaglass: var(--seaglass-dark);
+        --seaglass-wash: var(--seaglass-wash-dark);
+        --terracotta: var(--terracotta-dark);
+      }
+    }
+
+    @supports (color: light-dark(white, black)) {
+      :root {
+        --canvas: light-dark(var(--canvas-light), var(--canvas-dark));
+        --desk: light-dark(var(--desk-light), var(--desk-dark));
+        --paper: light-dark(var(--paper-light), var(--paper-dark));
+        --pocket: light-dark(var(--pocket-light), var(--pocket-dark));
+        --hairline: light-dark(var(--hairline-light), var(--hairline-dark));
+        --seam: light-dark(var(--seam-light), var(--seam-dark));
+        --ink-primary: light-dark(var(--ink-primary-light), var(--ink-primary-dark));
+        --ink-secondary: light-dark(var(--ink-secondary-light), var(--ink-secondary-dark));
+        --ink-tertiary: light-dark(var(--ink-tertiary-light), var(--ink-tertiary-dark));
+        --seaglass: light-dark(var(--seaglass-light), var(--seaglass-dark));
+        --seaglass-wash: light-dark(var(--seaglass-wash-light), var(--seaglass-wash-dark));
+        --terracotta: light-dark(var(--terracotta-light), var(--terracotta-dark));
+      }
+    }
+
+    html {
+      accent-color: var(--seaglass);
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--canvas);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: color-mix(in srgb, var(--canvas) 88%, transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .topbar-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink-primary);
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-tertiary);
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--ink-primary);
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--hairline);
+      background-color: var(--paper);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      border-color: var(--seaglass);
+      color: var(--seaglass);
+      outline: none;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    .pocket-hero {
+      background-color: var(--pocket);
+      color: #f4f0e8;
+      border-radius: 22px;
+      padding: 28px 26px;
+      margin-bottom: 28px;
+      border: 1px dashed rgba(118, 148, 162, 0.45);
+      outline: 5px solid var(--pocket);
+    }
+
+    .pocket-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: #b4c3ca;
+      margin: 0 0 8px;
+    }
+
+    .pocket-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 10px;
+      color: #f4f0e8;
+    }
+
+    .pocket-hero p {
+      margin: 0;
+      color: #c8d4da;
+      max-width: 58ch;
+    }
+
+    .slip {
+      background-color: var(--paper);
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 28px 26px;
+      margin-bottom: 24px;
+      scroll-margin-top: 76px;
+    }
+
+    .slip-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-tertiary);
+      margin: 0 0 6px;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 0 0 14px;
+      color: var(--ink-primary);
+    }
+
+    h3 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 20px 0 6px;
+      color: var(--ink-primary);
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--ink-secondary);
+    }
+
+    ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+      color: var(--ink-secondary);
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .seam {
+      border: 0;
+      border-top: 1px dashed var(--seam);
+      margin: 22px 0;
+    }
+
+    .summary-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--seaglass);
+      background-color: var(--seaglass-wash);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .contact-card {
+      background-color: var(--desk);
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 16px 0 22px;
+    }
+
+    .contact-card p {
+      margin: 0;
+      font-size: 0.94rem;
+    }
+
+    .button-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background-color: var(--pocket);
+      color: #f4f0e8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 10px 18px;
+      border-radius: 11px;
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      opacity: 0.92;
+      outline: 2px solid var(--seaglass);
+      outline-offset: 2px;
+    }
+
+    /* Native details/summary FAQ accordion following modern-web-guidance */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .accordion details {
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      background-color: var(--canvas);
+      padding: 2px 16px;
+    }
+
+    .accordion summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.65ch;
+      padding: 13px 0;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--ink-primary);
+    }
+
+    .accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .accordion summary::before {
+      content: "";
+      inline-size: 0.95em;
+      block-size: 0.95em;
+      flex-shrink: 0;
+      background-color: currentColor;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M3.5 6l4.5 4.5L12.5 6'/%3E%3C/svg%3E") no-repeat center / contain;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M3.5 6l4.5 4.5L12.5 6'/%3E%3C/svg%3E") no-repeat center / contain;
+      rotate: -90deg;
+    }
+
+    .accordion details[open] > summary::before {
+      rotate: 0deg;
+    }
+
+    .accordion details::details-content {
+      interpolate-size: allow-keywords;
+      overflow: clip;
+      contain: layout;
+    }
+
+    .accordion details:not([open])::details-content {
+      block-size: 0;
+    }
+
+    .accordion details p {
+      padding-bottom: 14px;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .accordion summary::before {
+        transition: rotate 0.2s ease;
+      }
+      .accordion details::details-content {
+        transition: block-size 0.26s ease-in-out, content-visibility 0.26s ease-in-out;
+        transition-behavior: allow-discrete;
+      }
+    }
+
+    footer {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-tertiary);
+      padding-top: 10px;
+    }
+
+    @media (max-width: 560px) {
+      .brand-tag {
+        display: none;
+      }
+      .pocket-hero,
+      .slip {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Duecove</span>
+        <span class="brand-tag">Receipts · Returns · Warranties</span>
+      </a>
+      <nav aria-label="Page sections">
+        <a href="#privacy">Privacy</a>
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="pocket-hero" aria-label="Overview">
+      <p class="pocket-eyebrow">Every purchase, in its place</p>
+      <h1>Privacy Policy &amp; Support</h1>
+      <p>Duecove keeps your receipts, return deadlines, and warranties completely on your iPhone. No accounts, no tracking, and no third-party servers.</p>
+    </section>
+
+    <section class="slip" id="privacy" aria-labelledby="privacy-heading">
+      <p class="slip-meta">Last updated: November 22, 2026</p>
+      <h2 id="privacy-heading">Privacy Policy</h2>
+      <span class="summary-pill">Data Not Collected · 100% On-Device</span>
+
+      <p>Duecove is built as a private, local-first archive. We do not operate user accounts, analytics SDKs, advertising frameworks, or external servers that receive your purchase history or receipt scans.</p>
+
+      <h3>What stays on your device</h3>
+      <ul>
+        <li><strong>Receipts, items, and attachments</strong>: All purchase details, receipt photos, PDFs, serial numbers, and store preferences are stored locally in SwiftData on your device.</li>
+        <li><strong>On-device Vision OCR</strong>: Text recognition for scanned receipts and imported PDFs runs strictly on your device using Apple's Vision framework. Images and text are never uploaded.</li>
+        <li><strong>Claim Packet PDFs and backups</strong>: Generated Proof of Purchase PDFs and portable <code>.duecove</code> backup archives are created locally and only leave your device if you explicitly export or share them.</li>
+        <li><strong>App Group sharing</strong>: Duecove uses a private on-device App Group container solely to share deadline summaries with your Home Screen and Lock Screen widgets and to pass receipts you explicitly share via the iOS Share Sheet.</li>
+      </ul>
+
+      <hr class="seam">
+
+      <h3>Optional iOS permissions</h3>
+      <ul>
+        <li><strong>Camera</strong>: Used only when you tap Scan Receipt to capture paper receipts with automatic edge detection.</li>
+        <li><strong>Photo Library</strong>: Used only when you choose a receipt photo or order screenshot to attach.</li>
+        <li><strong>Notifications</strong>: Used only for local return-deadline and warranty-expiration reminders scheduled on your device.</li>
+        <li><strong>Calendar (write-only)</strong>: Used only when you tap Calendar on a purchase slip to add a deadline event.</li>
+        <li><strong>Face ID / Passcode</strong>: Used only if you enable Privacy Lock in Settings to protect your cove locally.</li>
+      </ul>
+
+      <hr class="seam">
+
+      <h3>Your control and deletion</h3>
+      <p>Because your data never leaves your device, you have complete control over it at all times. You can delete any individual purchase slip inside the app, export a portable <code>.duecove</code> backup from Settings, or erase all local data by uninstalling Duecove.</p>
+
+      <h3>Privacy contact</h3>
+      <p>If you have any questions about this Privacy Policy, email <a href="mailto:support@duecove.app" style="color: var(--seaglass);">support@duecove.app</a>.</p>
+    </section>
+
+    <section class="slip" id="support" aria-labelledby="support-heading">
+      <p class="slip-meta">Duecove for iPhone &amp; iPad · iOS 26.0+</p>
+      <h2 id="support-heading">Support</h2>
+      <p>Need help with a receipt scan, backup archive, widget, or feature suggestion? Reach out directly and we will reply promptly.</p>
+
+      <div class="contact-card">
+        <div>
+          <p><strong>Email support</strong></p>
+          <p>Include your iOS version and a brief description of what happened.</p>
+        </div>
+        <a class="button-primary" href="mailto:support@duecove.app?subject=Duecove%20Support">support@duecove.app</a>
+      </div>
+
+      <hr class="seam">
+
+      <section class="accordion" id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+
+        <details>
+          <summary>How does on-device receipt scanning work?</summary>
+          <p>Tap Scan Receipt from the bottom dock to capture a paper receipt with automatic edge detection, or import a screenshot or PDF invoice. Duecove reads the store name, purchase date, total, order number, and any explicitly printed return date directly on your iPhone without uploading your file.</p>
+        </details>
+
+        <details>
+          <summary>Why does Duecove ask me to pick a return window instead of guessing?</summary>
+          <p>Store return policies vary by holiday period, membership tier, and product category. Duecove extracts an explicit return date when printed on your receipt, offers fast one-tap pills (14d, 30d, 60d, 90d, or custom date), and remembers your own last choice for a store as an optional one-tap suggestion.</p>
+        </details>
+
+        <details>
+          <summary>How do I save multiple items from one receipt?</summary>
+          <p>When creating a receipt slip, tap "Add another item from this receipt" to list additional items under the same proof of purchase. Each item gets its own return cutoff and warranty, while linking quietly to sibling items from that receipt.</p>
+        </details>
+
+        <details>
+          <summary>How do I preview and share a Claim Packet PDF?</summary>
+          <p>Open any purchase slip and tap Claim Packet PDF. Duecove opens an in-app preview combining your item details, serial number, warranty dates, and attached receipt scan. Tap Export in the top-right corner when you are ready to email, save, or print it.</p>
+        </details>
+
+        <details>
+          <summary>How do I share an order PDF or screenshot from Mail, Safari, or Photos?</summary>
+          <p>Tap the iOS Share button on any order PDF or receipt screenshot and select Save to Duecove. The next time you open Duecove, the live receipt slip opens automatically with your file attached and parsed.</p>
+        </details>
+
+        <details>
+          <summary>How do I back up or move my Duecove archive?</summary>
+          <p>Open Settings and tap Export .duecove backup to save a self-contained archive of all your slips and attachments to Files, AirDrop, or iCloud Drive. Use Restore from .duecove backup on any device to merge your archive without creating duplicates.</p>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Duecove · Every purchase, in its place.
+  </footer>
+</body>
+</html>
