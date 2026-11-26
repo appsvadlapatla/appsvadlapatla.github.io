@@ -439,17 +439,18 @@
     </section>
 
     <section class="slip" id="privacy" aria-labelledby="privacy-heading">
-      <p class="slip-meta">Last updated: November 22, 2026</p>
+      <p class="slip-meta">Last updated: November 25, 2026</p>
       <h2 id="privacy-heading">Privacy Policy</h2>
-      <span class="summary-pill">Data Not Collected · 100% On-Device</span>
+      <span class="summary-pill">Data Not Collected · Private &amp; Local-First</span>
 
       <p>Duecove is built as a private, local-first archive. We do not operate user accounts, analytics SDKs, advertising frameworks, or external servers that receive your purchase history or receipt scans.</p>
 
-      <h3>What stays on your device</h3>
+      <h3>Where your data lives</h3>
       <ul>
-        <li><strong>Receipts, items, and attachments</strong>: All purchase details, receipt photos, PDFs, serial numbers, and store preferences are stored locally in SwiftData on your device.</li>
-        <li><strong>On-device Vision OCR</strong>: Text recognition for scanned receipts and imported PDFs runs strictly on your device using Apple's Vision framework. Images and text are never uploaded.</li>
-        <li><strong>Claim Packet PDFs and backups</strong>: Generated Proof of Purchase PDFs and portable <code>.duecove</code> backup archives are created locally and only leave your device if you explicitly export or share them.</li>
+        <li><strong>Purchase slips and deadlines</strong>: Your store names, prices, return cutoffs, warranty dates, serial numbers, and store preferences are stored locally in SwiftData on your device.</li>
+        <li><strong>Receipt files in Apple Files</strong>: Scanned receipt photos and imported PDFs are saved by year as standard files in your own <code>iCloud Drive &gt; Duecove</code> folder (or <code>On My iPhone &gt; Duecove</code> if iCloud Drive is turned off). If you use iCloud Drive, those files are stored in your personal Apple iCloud account under Apple's privacy terms and are never accessible to Duecove's developer.</li>
+        <li><strong>On-device Vision OCR</strong>: Text recognition for scanned receipts and imported PDFs runs strictly on your device using Apple's Vision framework. Images and text are never uploaded to any third-party service.</li>
+        <li><strong>Claim Packet PDFs and backups</strong>: Generated Proof of Purchase PDFs and lightweight <code>.duecove</code> backup archives are created locally and only leave your device if you explicitly export or share them.</li>
         <li><strong>App Group sharing</strong>: Duecove uses a private on-device App Group container solely to share deadline summaries with your Home Screen and Lock Screen widgets and to pass receipts you explicitly share via the iOS Share Sheet.</li>
       </ul>
 
@@ -470,7 +471,7 @@
       <p>Because your data never leaves your device, you have complete control over it at all times. You can delete any individual purchase slip inside the app, export a portable <code>.duecove</code> backup from Settings, or erase all local data by uninstalling Duecove.</p>
 
       <h3>Privacy contact</h3>
-      <p>If you have any questions about this Privacy Policy, email <a href="mailto:support@duecove.app" style="color: var(--seaglass);">support@duecove.app</a>.</p>
+      <p>If you have any questions about this Privacy Policy, email <a href="mailto:avadlapatla.apps+duecove@gmail.com" style="color: var(--seaglass);">avadlapatla.apps+duecove@gmail.com</a>.</p>
     </section>
 
     <section class="slip" id="support" aria-labelledby="support-heading">
@@ -483,7 +484,7 @@
           <p><strong>Email support</strong></p>
           <p>Include your iOS version and a brief description of what happened.</p>
         </div>
-        <a class="button-primary" href="mailto:support@duecove.app?subject=Duecove%20Support">support@duecove.app</a>
+        <a class="button-primary" href="mailto:avadlapatla.apps+duecove@gmail.com?subject=Duecove%20Support">avadlapatla.apps+duecove@gmail.com</a>
       </div>
 
       <hr class="seam">
@@ -518,7 +519,7 @@
 
         <details>
           <summary>How do I back up or move my Duecove archive?</summary>
-          <p>Open Settings and tap Export .duecove backup to save a self-contained archive of all your slips and attachments to Files, AirDrop, or iCloud Drive. Use Restore from .duecove backup on any device to merge your archive without creating duplicates.</p>
+          <p>Your raw receipt images and PDFs already live as standard files organized by year in your Apple Files app under iCloud Drive &gt; Duecove (or On My iPhone &gt; Duecove). Open Settings and tap Export .duecove backup to save a lightweight backup of your purchase slips, deadlines, and file links, and use Restore from .duecove backup to merge records without duplicates.</p>
         </details>
       </section>
     </section>
